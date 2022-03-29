@@ -20,7 +20,7 @@ const Home: NextPage<
         </p>
 
         <div className={styles.grid}>
-          {books.map((book) => (
+          {books.map((book: any) => (
             <a
               key={book.id}
               href={book.properties.URL.url}
