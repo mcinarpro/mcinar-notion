@@ -26,6 +26,7 @@ const Home: NextPage<
               href={book.properties.URL.url}
               className={styles.card}
               target="_blank"
+              rel="noreferrer"
             >
               <h2>{book.properties.Name.title[0].plain_text} &rarr;</h2>
               <p>{book.properties.Author.rich_text[0].plain_text}</p>
