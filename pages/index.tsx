@@ -7,6 +7,10 @@ import type {
 import { notion } from "../config/notion";
 import styles from "../styles/Home.module.css";
 
+
+const Completed = "Completed";
+const InProgress = "In progress";
+
 const Home: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ books }) => {
@@ -30,6 +34,8 @@ const Home: NextPage<
             >
               <h2>{book.properties.Name.title[0].plain_text} &rarr;</h2>
               <p>{book.properties.Author.rich_text[0].plain_text}</p>
+              {book.properties.Status.select.name === Completed && <span>✅</span>}
+              {book.properties.Status.select.name === InProgress && <span>📖</span>}
             </a>
           ))}
         </div>
