@@ -19,11 +19,14 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           These books come from my Notion document.
         </p>
 
+        <Link href='books/new'>Add new book</Link>
+
         <div className={styles.grid}>
           {books.map((book: any) => (
             <Link
               key={book.id}
-              href={`page/${book.id}`}
+              href={`page/${book.id
+              }`}
             >
               <a className={styles.card}>
                 <h2>{book.properties.Name.title[0].plain_text} &rarr;</h2>
